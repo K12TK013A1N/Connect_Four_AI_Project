@@ -80,10 +80,10 @@ while not game_over:
   # ADDING EVENT IN PY-GAME
 
   # for event in pygame.event.get():
-    # if event.type == pygame.QUIT:
-    #   sys.exit()
-    # if event.type == pygame.MOUSEBUTTONDOWN:
-    #   pass
+  #   if event.type == pygame.QUIT:
+  #     sys.exit()
+  #   if event.type == pygame.MOUSEBUTTONDOWN:
+  #     pass
     #Ask for Player 1 Input
     if turn == 0:
       col = int(input("Player 1 Make your selection (0-6): "))
