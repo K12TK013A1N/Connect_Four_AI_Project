@@ -3,7 +3,7 @@ import time
 import numpy as np
 
 time_game_dict = {}
-loops = 10
+loops = 1000
 
 for i in range(loops):
   start_time = time.time()
@@ -11,7 +11,7 @@ for i in range(loops):
   call(["python", "crazy.py"])
   end_time = time.time()
   ex_time = end_time - start_time
-  ex_time = round(ex_time,1)
+  ex_time = round(ex_time,2)
   if ex_time not in time_game_dict:
     time_game_dict[ex_time] = 1
   else:
