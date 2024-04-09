@@ -90,14 +90,6 @@ while not game_over:
 
   # ADDING EVENT IN PY-GAME
 
-  # for event in pygame.event.get():
-  #   if event.type == pygame.QUIT:
-  #     sys.exit()
-  #   if event.type == pygame.MOUSEBUTTONDOWN:
-  #     pass
-    #Ask for Player 1 Input
-    if turn == 0:
-      col = int(input("Player 1 Make your selection (0-6): "))
   for event in pygame.event.get():
     if event.type == pygame.QUIT:
       sys.exit()
@@ -126,7 +118,8 @@ while not game_over:
             label = myfont.render("Player 1 WINS !!", 1, RED)
             screen.blit(label, (40,10))
             game_over = True;
-
+          turn += 1
+          turn = turn % 2
 
       #Ask for Player 2 Input
       else:
@@ -138,15 +131,15 @@ while not game_over:
           drop_piece(board, row, col, 2)
 
           if winning_move(board, 2):
-            label = myfont.render("Player 1 WINS !!", 1, YELLOW)
+            label = myfont.render("Player 2 WINS !!", 1, YELLOW)
             screen.blit(label, (40,10))
             game_over = True
+          turn += 1
+          turn = turn % 2
 
       print_board(board)
       draw_board(board)
 
-      turn += 1
-      turn = turn % 2
 
       if game_over:
         pygame.time.wait(3000)
